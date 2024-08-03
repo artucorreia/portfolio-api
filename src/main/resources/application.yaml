@@ -1,3 +1,6 @@
+mail-config:
+  username: arthurcorreia.dev@gmail.com
+  subject: Contato Portfólio
 spring:
   application:
     name: portfolio-api
@@ -9,5 +12,16 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sendermail.dev@gmail.com
+    password: vhmx xrlw gjcq kfbt
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

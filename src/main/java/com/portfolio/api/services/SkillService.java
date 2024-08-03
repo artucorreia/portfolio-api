@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.logging.Logger;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
@@ -23,7 +22,7 @@ public class SkillService {
     @Autowired
     private SkillRepository repository;
 
-    public SkillDTO findById(Integer id) {
+    public SkillDTO findById(Long id) {
         logger.info("Find a skill by id");
 
         SkillDTO skill = Mapper.parseObject(

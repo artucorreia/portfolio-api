@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ProjectDTO extends RepresentationModel<ProjectDTO> {
 
-    private Integer id;
+    private Long id;
 
     private String name;
 
@@ -20,9 +20,11 @@ public class ProjectDTO extends RepresentationModel<ProjectDTO> {
 
     private Boolean active;
 
+    private List<TechnologyDTO> technologies;
+
     public ProjectDTO() {}
 
-    public ProjectDTO(Integer id, String name, String description, String imageUrl, String deployUrl, String repositoryUrl, Boolean active) {
+    public ProjectDTO(Long id, String name, String description, String imageUrl, String deployUrl, String repositoryUrl, Boolean active, List<TechnologyDTO> technologies) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -30,13 +32,14 @@ public class ProjectDTO extends RepresentationModel<ProjectDTO> {
         this.deployUrl = deployUrl;
         this.repositoryUrl = repositoryUrl;
         this.active = active;
+        this.technologies = technologies;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -86,5 +89,13 @@ public class ProjectDTO extends RepresentationModel<ProjectDTO> {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public List<TechnologyDTO> getTechnologies() {
+        return technologies;
+    }
+
+    public void setTechnologies(List<TechnologyDTO> technologies) {
+        this.technologies = technologies;
     }
 }

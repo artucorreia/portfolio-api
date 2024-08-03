@@ -4,7 +4,7 @@ import org.springframework.hateoas.RepresentationModel;
 
 public class SkillDTO extends RepresentationModel<SkillDTO> {
 
-    private Integer id;
+    private Long id;
 
     private String name;
 
@@ -12,17 +12,17 @@ public class SkillDTO extends RepresentationModel<SkillDTO> {
 
     public SkillDTO() {}
 
-    public SkillDTO(Integer id, String name, String imageUrl) {
+    public SkillDTO(Long id, String name, String imageUrl) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -21,7 +21,7 @@ public class SkillController {
         value = "/{id}",
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<SkillDTO> findById(@PathVariable Integer id) {
+    public ResponseEntity<SkillDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok(service.findById(id));
     }
 

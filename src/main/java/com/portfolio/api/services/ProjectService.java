@@ -22,7 +22,7 @@ public class ProjectService {
     @Autowired
     private ProjectRepository repository;
 
-    public ProjectDTO findById(Integer id) {
+    public ProjectDTO findById(Long id) {
         logger.info("Find a project by id");
 
         ProjectDTO project = Mapper.parseObject(

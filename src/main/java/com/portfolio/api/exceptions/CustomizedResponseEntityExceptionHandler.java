@@ -28,7 +28,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     }
 
     @ExceptionHandler(ResourceNotFound.class)
-    public final ResponseEntity<ExceptionResponse> handleResourceNotFoundException(
+    public final ResponseEntity<ExceptionResponse> handleResourceNotFoundExceptions(
             Exception exception,
             WebRequest request
     ) {
@@ -38,5 +38,18 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
                 request.getDescription(false)
         );
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(EmailSendingException.class)
+    public final ResponseEntity<ExceptionResponse> handleEmailSendingExceptions(
+            Exception exception,
+            WebRequest request
+    ) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(
+                LocalDateTime.now(),
+                exception.getMessage(),
+                request.getDescription(false)
+        );
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 }

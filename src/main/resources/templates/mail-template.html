@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template Mail</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .title {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin: 0;
+            padding: 20px 0;
+            background: #4b79a1;
+            background: linear-gradient(to right, #283e51, #4b79a1);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .sender-container, .message-container {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #4b79a1;
+            font-size: 1.75em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .divisor {
+            height: 2px;
+            background-color: #ddd;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">Portfolio</h1>
+<main class="container">
+    <section class="sender-container">
+        <h2>Sender</h2>
+        <p><strong>Name:</strong> ${senderName}</p>
+        <p><strong>Email:</strong> ${senderMail}</p>
+    </section>
+    <section class="message-container">
+        <h2>Message</h2>
+        <p>${message}</p>
+    </section>
+</main>
+</body>
+</html>

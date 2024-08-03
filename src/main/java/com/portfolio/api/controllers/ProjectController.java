@@ -21,7 +21,7 @@ public class ProjectController {
         value = "/{id}",
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<ProjectDTO> findById(@PathVariable Integer id) {
+    public ResponseEntity<ProjectDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok(service.findById(id));
     }
 

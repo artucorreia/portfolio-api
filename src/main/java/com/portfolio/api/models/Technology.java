@@ -2,12 +2,12 @@ package com.portfolio.api.models;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "SKILLS")
-public class Skill implements Serializable {
+@Table(name = "TECHNOLOGIES")
+public class Technology {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,15 +15,15 @@ public class Skill implements Serializable {
     @Column(name = "NAME", length = 50, nullable = false, unique = true)
     private String name;
 
-    @Column(name = "IMAGE_URL", length = 150, nullable = false)
-    private String imageUrl;
+    @ManyToMany(mappedBy = "technologies")
+    private List<Project> projects;
 
-    public Skill() {}
+    public Technology() {}
 
-    public Skill(Long id, String name, String imageUrl) {
+    public Technology(Long id, String name, List<Project> projects) {
         this.id = id;
         this.name = name;
-        this.imageUrl = imageUrl;
+        this.projects = projects;
     }
 
     public Long getId() {
@@ -42,24 +42,26 @@ public class Skill implements Serializable {
         this.name = name;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public List<Project> getProjects() {
+        return projects;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Skill skill = (Skill) o;
-        return Objects.equals(id, skill.id) && Objects.equals(name, skill.name) && Objects.equals(imageUrl, skill.imageUrl);
+        Technology that = (Technology) o;
+        return Objects.equals(id, that.id)
+                && Objects.equals(name, that.name)
+                && Objects.equals(projects, that.projects);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, imageUrl);
+        return Objects.hash(id, name, projects);
     }
 }
