@@ -1,4 +1,4 @@
-INSERT INTO portfolio_db.projects_technologies (PROJECT_ID, TECHNOLOGY_ID) VALUES
+INSERT INTO PROJECTS_TECHNOLOGIES (PROJECT_ID, TECHNOLOGY_ID) VALUES
     (1, 2),
     (1, 3),
     (1, 5),

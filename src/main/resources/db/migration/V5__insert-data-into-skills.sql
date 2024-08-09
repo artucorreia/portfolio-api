@@ -1,4 +1,4 @@
-INSERT INTO portfolio_db.skills (NAME,IMAGE_URL) VALUES
+INSERT INTO SKILLS (NAME,IMAGE_URL) VALUES
 	 ('Spring Boot','/assets/png/spring-boot.png'),
 	 ('Java','/assets/png/java.png'),
 	 ('Angular','/assets/png/angular.png'),

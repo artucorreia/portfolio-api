@@ -1,4 +1,4 @@
-INSERT INTO portfolio_db.technologies (NAME) VALUES
+INSERT INTO TECHNOLOGIES (NAME) VALUES
     ('Angular'),
     ('Spring Boot'),
     ('Auth0'),
