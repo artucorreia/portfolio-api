@@ -24,7 +24,7 @@ public class ProjectController {
     @Autowired
     private ProjectService service;
 
-    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"})
+    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "http://92.112.179.24:4200"})
     @GetMapping(
         value = "/{id}",
         produces = MediaType.APPLICATION_JSON_VALUE
@@ -54,7 +54,7 @@ public class ProjectController {
         return ResponseEntity.ok(service.findById(id));
     }
 
-    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"})
+    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "http://92.112.179.24:4200"})
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(
             summary = "Find all projects",
