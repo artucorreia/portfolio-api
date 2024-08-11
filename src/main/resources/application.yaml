@@ -6,9 +6,9 @@ spring:
     name: portfolio-api
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DB_URL}
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: jdbc:mysql://root:uQCCXcibJbCLOkexmRyOYIRRRzQLHUeB@monorail.proxy.rlwy.net:24330/railway
+    username: root
+    password: uQCCXcibJbCLOkexmRyOYIRRRzQLHUeB
   jpa:
     open-in-view: false
     hibernate:
