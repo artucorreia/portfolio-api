@@ -24,7 +24,7 @@ public class SkillController {
     @Autowired
     private SkillService service;
 
-    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://portfolio-artucorreia"})
+    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://portfolio-artucorreia.web.app"})
     @GetMapping(
         value = "/{id}",
         produces = MediaType.APPLICATION_JSON_VALUE
@@ -54,7 +54,7 @@ public class SkillController {
         return ResponseEntity.ok(service.findById(id));
     }
 
-    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://portfolio-artucorreia"})
+    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://portfolio-artucorreia.web.app"})
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(
             summary = "Find all skills",

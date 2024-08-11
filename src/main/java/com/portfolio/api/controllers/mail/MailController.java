@@ -21,7 +21,7 @@ public class MailController {
     @Autowired
     private MailService service;
 
-    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://portfolio-artucorreia"})
+    @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://portfolio-artucorreia.web.app"})
     @PostMapping(
         consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE
