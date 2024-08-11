@@ -34,8 +34,8 @@ public class MailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
-            helper.setFrom("sendermail.dev@gmail.com");
-            helper.setTo(recipient);
+            helper.setTo("<" + recipient + ">");
+            helper.setFrom("no-reply@sendermail.dev");
             helper.setSubject(subject);
 
             String template = getMailTemplate();
@@ -43,7 +43,12 @@ public class MailService {
             template = template.replace("${senderMail}", mailDTO.getSenderMail());
             template = template.replace("${message}", mailDTO.getMessage());
 
-            helper.setText(template, true);
+            helper.setText(
+                    "New Message:\n" +
+                            "\nName: " + mailDTO.getSenderName() +
+                            "\nE-mail: " + mailDTO.getSenderMail() +
+                            "\n\nMessage:\n" + mailDTO.getMessage()
+                    , template);
 
             mailSender.send(message);
         }
