@@ -6,21 +6,19 @@ spring:
     name: portfolio-api
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://root:uQCCXcibJbCLOkexmRyOYIRRRzQLHUeB@monorail.proxy.rlwy.net:24330/railway
-    username: root
-    password: uQCCXcibJbCLOkexmRyOYIRRRzQLHUeB
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     open-in-view: false
     hibernate:
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: update
     show-sql: false
   mail:
     host: smtp.gmail.com
     port: 587
-    username: sendermail.dev@gmail.com
-    password: vhmx xrlw gjcq kfbt
+    username: ${MAIL_USER}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
